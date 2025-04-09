@@ -6,7 +6,7 @@ const Logo: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <Link to="/" className={`flex items-center ${className || ''}`}>
       <img 
-        src="/lovable-uploads/c14ed647-02cd-418a-bf61-088abc275089.png" 
+        src="/lovable-uploads/5f3b0df2-45d1-4f4a-ac3e-6ad4c5ee1788.png" 
         alt="QuoteLinker Logo" 
         className="h-8 w-auto mr-2" 
       />
