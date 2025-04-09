@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
 
-## Project info
+# QuoteLinker - Life Insurance Lead Generation Platform
 
-**URL**: https://lovable.dev/projects/cad5967e-2ea8-41d0-8dea-5891a57eb54a
+![QuoteLinker Logo](/public/lovable-uploads/c14ed647-02cd-418a-bf61-088abc275089.png)
 
-## How can I edit this code?
+QuoteLinker is a modern, high-conversion life insurance lead generation web application designed to connect potential customers with licensed insurance agents.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Mobile-First Design**: Fully responsive experience across all devices
+- **Multi-Step Quote Form**: Streamlined, user-friendly quote request flow
+- **Lead Management**: Capture and store leads for follow-up
+- **Blog/Content Platform**: SEO-ready article platform for content marketing
+- **Agent/Admin Portals**: Scaffolded dashboards for future development
+- **Email Integrations**: Ready for Resend/Postmark for automated emails
+- **CRM Integration**: HubSpot integration capabilities
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cad5967e-2ea8-41d0-8dea-5891a57eb54a) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React with TypeScript, Tailwind CSS
+- **Form Handling**: React Hook Form with Zod validation
+- **Routing**: React Router 
+- **State Management**: React Query & React Context
+- **UI Components**: shadcn/ui component library
+- **Storage**: Local storage (for development mode)
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ and npm
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/quotelinker.git
+cd quotelinker
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Create a `.env.local` file in the root directory:
+```
+# Development vs Production mode
+NODE_ENV=development
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# HubSpot API (when ready)
+HUBSPOT_API_KEY=your_hubspot_api_key
+HUBSPOT_PORTAL_ID=your_hubspot_portal_id
+HUBSPOT_FORM_ID=your_hubspot_form_id
+
+# Email service (Resend or Postmark)
+RESEND_API_KEY=your_resend_api_key
+# or
+POSTMARK_API_KEY=your_postmark_api_key
+
+# Google Analytics
+GA_MEASUREMENT_ID=your_ga_measurement_id
+```
+
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+quotelinker/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # React components
+│   │   ├── forms/          # Form components
+│   │   └── ui/             # UI components
+│   ├── lib/                # Utilities
+│   ├── pages/              # Page components
+│   └── types/              # TypeScript type definitions
+├── .env.local              # Environment variables (create this file)
+└── README.md               # Project documentation
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Development Mode
 
-## What technologies are used for this project?
+In development mode, form submissions are stored in local storage instead of being sent to external services. This allows for testing without setting up API keys.
 
-This project is built with:
+To view stored leads in development mode:
+1. Open the browser's developer console
+2. Run: `JSON.parse(localStorage.getItem('quotelinker_leads'))`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+The application is ready to be deployed to Vercel:
 
-Simply open [Lovable](https://lovable.dev/projects/cad5967e-2ea8-41d0-8dea-5891a57eb54a) and click on Share -> Publish.
+1. Connect your GitHub repository to Vercel
+2. Add the required environment variables in the Vercel project settings
+3. Deploy the application
 
-## Can I connect a custom domain to my Lovable project?
+## Future Enhancements
 
-Yes it is!
+- **Stripe Integration**: For agent subscriptions and pay-per-lead models
+- **Authentication**: Agent/admin login with Clerk or Supabase
+- **CMS Integration**: For blog content management
+- **A/B Testing**: Infrastructure for conversion rate optimization
+- **Advanced Analytics**: Detailed lead and conversion tracking
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is proprietary and confidential.
+
+## Contact
+
+For any questions or support, please contact support@quotelinker.com.
